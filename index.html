@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Workspace - Made by Ayyan Irfan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Full screen window structure holding both panels side-by-side */
+        html, body {
+            width: 100% !important;
+            height: 100% !important;
+            overflow: hidden !important;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            color: #f8fafc;
+            display: flex;
+        }
+
+        /* Sleek Left Panel for your custom text and brand info */
+        .brand-panel {
+            width: 35%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            text-align: center;
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(20px);
+        }
+
+        /* Decorative background light effect */
+        .brand-panel::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(99, 102, 241, 0.15);
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: -1;
+        }
+
+        .avatar-box {
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .bot-avatar {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            border-radius: 28px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 38px;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.35);
+        }
+
+        .online-dot {
+            position: absolute;
+            bottom: 4px;
+            right: 4px;
+            width: 16px;
+            height: 16px;
+            background-color: #22c55e;
+            border: 3px solid #0f172a;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #22c55e;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        p {
+            color: #94a3b8;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .credit-text {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #818cf8;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: rgba(99, 102, 241, 0.1);
+            padding: 6px 14px;
+            border-radius: 12px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        /* Right Panel that stretches the Zapier Chat Window to max height/width */
+        .chat-panel {
+            width: 65%;
+            height: 100vh;
+            background: #ffffff;
+        }
+
+        /* Overrides external margins to force full-screen coverage */
+        zapier-interfaces-chatbot-embed {
+            width: 100% !important;
+            height: 100% !important;
+            max-height: 100vh !important;
+            border: none !important;
+            display: block !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Left side content area -->
+    <div class="brand-panel">
+        <div class="avatar-box">
+            <div class="bot-avatar">🤖</div>
+            <div class="online-dot"></div>
+        </div>
+        <h1>AI Assistant Online</h1>
+        <p>Welcome! Our intelligent agent is fully trained and ready to handle your tasks, answer questions, or walk you through configurations.</p>
+        <span class="credit-text">Made By Ayyan Irfan</span>
+    </div>
+
+    <!-- Right side expanded AI app zone -->
+    <div class="chat-panel">
+        <script async type="module" src="https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js"></script>
+        <zapier-interfaces-chatbot-embed is-popup="false" chatbot-id="cmr1rgc4v002ah04bbj3ur1sw" height="100%" width="100%"></zapier-interfaces-chatbot-embed>
+    </div>
+
+</body>
+</html>
