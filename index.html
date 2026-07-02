@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat With Rike</title>
     <style>
-        /* Reset margins and structure layout vertically */
         html, body {
             margin: 0 !important;
             padding: 0 !important;
@@ -14,20 +13,30 @@
             overflow: hidden !important;
             display: flex !important;
             flex-direction: column !important;
-            background-color: #212121; /* Dark aesthetic background */
+            background-color: #212121; 
         }
 
-        /* 🏷️ Top Header Bar (Takes up roughly 5% height) */
+        /* 🏷️ Top Header Bar */
         .top-header {
             width: 100% !important;
             height: 50px !important;
-            background-color: #171717; /* Slate dark accent */
+            background-color: #171717; 
             display: flex !important;
-            justify-content: center !important;
             align-items: center !important;
+            padding: 0 20px !important; 
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             z-index: 100 !important;
+            position: relative !important;
+        }
+
+        /* 🖼️ Logo Style in Left Corner */
+        .header-logo {
+            width: 32px !important;
+            height: 32px !important;
+            border-radius: 8px !important;
+            object-fit: cover !important;
+            margin-right: 15px !important; 
         }
 
         .top-header h1 {
@@ -39,18 +48,17 @@
         }
 
         .author-name {
-            color: #ab68ff; /* Vibrant premium accent for your name */
+            color: #ab68ff; 
             font-weight: 700;
         }
 
-        /* 🤖 Chat Workspace Container (Takes up 95% height) */
+        /* 🤖 Chat Workspace Container */
         .chat-workspace {
             flex: 1 !important;
             width: 100% !important;
             background-color: #ffffff;
         }
 
-        /* Forces Zapier embed element to scale precisely into the container grid */
         zapier-interfaces-chatbot-embed {
             width: 100% !important;
             height: 100% !important;
@@ -63,6 +71,8 @@
 
     <!-- Top Branding Title Bar Header -->
     <header class="top-header">
+        <!-- EXACT CASE MATCH: Using Logo.png with a capital L -->
+        <img src="Logo.png" alt="Rike Logo" class="header-logo">
         <h1>Chat With Rike. <span class="author-name">By Ayyan Irfan</span></h1>
     </header>
 
