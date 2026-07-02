@@ -5,18 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat With Rike</title>
     <style>
+        /* Force body layer foundations */
         html, body {
             margin: 0 !important;
             padding: 0 !important;
             width: 100% !important;
             height: 100% !important;
             overflow: hidden !important;
-            display: flex !important;
-            flex-direction: column !important;
             background-color: #212121; 
         }
 
-        /* 🏷️ Top Header Bar */
+        /* 🏷️ Top Header Bar Layout Setup */
         .top-header {
             width: 100% !important;
             height: 50px !important;
@@ -30,7 +29,7 @@
             position: relative !important;
         }
 
-        /* 🖼️ Logo Style in Left Corner */
+        /* 🖼️ Left Corner Branding Image Layout */
         .header-logo {
             width: 32px !important;
             height: 32px !important;
@@ -52,13 +51,18 @@
             font-weight: 700;
         }
 
-        /* 🤖 Chat Workspace Container */
+        /* 🤖 Absolute Frame Blueprint: Forces chatbot to take remaining screen space */
         .chat-workspace {
-            flex: 1 !important;
-            width: 100% !important;
-            background-color: #ffffff;
+            position: absolute !important;
+            top: 50px !important; /* Starts exactly where header ends */
+            bottom: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            background-color: #ffffff !important;
+            z-index: 50 !important;
         }
 
+        /* Forces embedded elements to render inside boundaries */
         zapier-interfaces-chatbot-embed {
             width: 100% !important;
             height: 100% !important;
@@ -71,7 +75,6 @@
 
     <!-- Top Branding Title Bar Header -->
     <header class="top-header">
-        <!-- EXACT CASE MATCH: Using Logo.png with a capital L -->
         <img src="Logo.png" alt="Rike Logo" class="header-logo">
         <h1>Chat With Rike. <span class="author-name">By Ayyan Irfan</span></h1>
     </header>
@@ -79,7 +82,7 @@
     <!-- Lower Chat Module Execution Frame Area -->
     <main class="chat-workspace">
         <script async type="module" src="https://zapier.com"></script>
-        <zapier-interfaces-chatbot-embed is-popup="false" chatbot-id="cmr1rgc4v002ah04bbj3ur1sw" height="100%" width="100%"></zapier-interfaces-chatbot-embed>
+        <zapier-interfaces-chatbot-embed is-popup="false" chatbot-id="cmr1rgc4v002ah04bbj3ur1sw"></zapier-interfaces-chatbot-embed>
     </main>
 
 </body>
