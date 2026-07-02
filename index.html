@@ -3,123 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Workspace - Made by Ayyan Irfan</title>
+    <title>Chat With Rike</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        /* Full screen window structure holding both panels side-by-side */
+        /* Reset margins and structure layout vertically */
         html, body {
+            margin: 0 !important;
+            padding: 0 !important;
             width: 100% !important;
             height: 100% !important;
             overflow: hidden !important;
-            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-            color: #f8fafc;
-            display: flex;
+            display: flex !important;
+            flex-direction: column !important;
+            background-color: #212121; /* Dark aesthetic background */
         }
 
-        /* Sleek Left Panel for your custom text and brand info */
-        .brand-panel {
-            width: 35%;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 40px;
-            text-align: center;
-            border-right: 1px solid rgba(255, 255, 255, 0.08);
-            position: relative;
-            background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(20px);
+        /* 🏷️ Top Header Bar (Takes up roughly 5% height) */
+        .top-header {
+            width: 100% !important;
+            height: 50px !important;
+            background-color: #171717; /* Slate dark accent */
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            z-index: 100 !important;
         }
 
-        /* Decorative background light effect */
-        .brand-panel::before {
-            content: '';
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            background: rgba(99, 102, 241, 0.15);
-            border-radius: 50%;
-            filter: blur(60px);
-            z-index: -1;
-        }
-
-        .avatar-box {
-            margin-bottom: 24px;
-            position: relative;
-        }
-
-        .bot-avatar {
-            width: 90px;
-            height: 90px;
-            background: linear-gradient(135deg, #6366f1, #a855f7);
-            border-radius: 28px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 38px;
-            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.35);
-        }
-
-        .online-dot {
-            position: absolute;
-            bottom: 4px;
-            right: 4px;
-            width: 16px;
-            height: 16px;
-            background-color: #22c55e;
-            border: 3px solid #0f172a;
-            border-radius: 50%;
-            box-shadow: 0 0 10px #22c55e;
-        }
-
-        h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-            background: linear-gradient(to right, #ffffff, #cbd5e1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -0.5px;
-        }
-
-        p {
-            color: #94a3b8;
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 16px;
-        }
-
-        .credit-text {
-            font-size: 0.85rem;
+        .top-header h1 {
+            color: #ececf1;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 1.1rem;
             font-weight: 600;
-            color: #818cf8;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            background: rgba(99, 102, 241, 0.1);
-            padding: 6px 14px;
-            border-radius: 12px;
-            border: 1px solid rgba(99, 102, 241, 0.2);
+            letter-spacing: 0.5px;
         }
 
-        /* Right Panel that stretches the Zapier Chat Window to max height/width */
-        .chat-panel {
-            width: 65%;
-            height: 100vh;
-            background: #ffffff;
+        .author-name {
+            color: #ab68ff; /* Vibrant premium accent for your name */
+            font-weight: 700;
         }
 
-        /* Overrides external margins to force full-screen coverage */
+        /* 🤖 Chat Workspace Container (Takes up 95% height) */
+        .chat-workspace {
+            flex: 1 !important;
+            width: 100% !important;
+            background-color: #ffffff;
+        }
+
+        /* Forces Zapier embed element to scale precisely into the container grid */
         zapier-interfaces-chatbot-embed {
             width: 100% !important;
             height: 100% !important;
-            max-height: 100vh !important;
             border: none !important;
             display: block !important;
         }
@@ -127,22 +61,16 @@
 </head>
 <body>
 
-    <!-- Left side content area -->
-    <div class="brand-panel">
-        <div class="avatar-box">
-            <div class="bot-avatar"><img src="Logo.png" alt="Logo" style="width: 100%; height: 100%; border-radius: 28px; object-fit: cover;"></div>
-            <div class="online-dot"></div>
-        </div>
-        <h1>AI Assistant Online</h1>
-        <p>Welcome! Our intelligent agent is fully trained and ready to handle your tasks, answer questions, or walk you through configurations.</p>
-        <span class="credit-text">Made By Ayyan Irfan</span>
-    </div>
+    <!-- Top Branding Title Bar Header -->
+    <header class="top-header">
+        <h1>Chat With Rike. <span class="author-name">By Ayyan Irfan</span></h1>
+    </header>
 
-    <!-- Right side expanded AI app zone -->
-    <div class="chat-panel">
-        <script async type="module" src="https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js"></script>
+    <!-- Lower Chat Module Execution Frame Area -->
+    <main class="chat-workspace">
+        <script async type="module" src="https://zapier.com"></script>
         <zapier-interfaces-chatbot-embed is-popup="false" chatbot-id="cmr1rgc4v002ah04bbj3ur1sw" height="100%" width="100%"></zapier-interfaces-chatbot-embed>
-    </div>
+    </main>
 
 </body>
 </html>
